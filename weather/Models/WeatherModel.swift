@@ -10,17 +10,20 @@ import Foundation
 
 class Weather{
     var city : String
-    var weather : [Temp] = []
+    var weather : Array<Forecast> = []
  
     init(city:String) {
         self.city = city
     }
 }
 
-struct Temp {
-    let temperature : Int
-    let temperatureMin : Int
-    let temperatureMax : Int
-    let dateTime : Date
-    let icon : String
+class Forecast {
+    var temperature : Int = 0
+    var temperatureMin : Int = 0
+    var temperatureMax : Int = 0
+    var dateTime : Date = Date.init()
+    var formatDate : String = ""
+    var dayOfWeek:String = ""
+    var icon : String = ""
+    
 }

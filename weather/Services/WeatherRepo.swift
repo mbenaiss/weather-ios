@@ -10,6 +10,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import SwifterSwift
 
 class WeatherRepo{
     
@@ -21,6 +22,9 @@ class WeatherRepo{
         
         let wether =  Weather(city: city)
         
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "fr_FR")
+        
         Alamofire.request(Base_URL, method: .get, parameters: params).responseJSON { response in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
@@ -29,15 +33,22 @@ class WeatherRepo{
                     let temp = self.convertToCelsius(subJson["main"]["temp"].doubleValue)
                     let temp_min = self.convertToCelsius(subJson["main"]["temp_min"].doubleValue)
                     let temp_max = self.convertToCelsius(subJson["main"]["temp_max"].doubleValue)
-                    let dateTime = Date(timeIntervalSince1970: TimeInterval(subJson["dt"].intValue))
+                    let date = Date(timeIntervalSince1970: TimeInterval(subJson["dt"].intValue))
                     let icon = subJson["weather"][0]["icon"].stringValue
-                    let t = Temp(temperature: temp, temperatureMin: temp_min, temperatureMax: temp_max, dateTime: dateTime,icon:icon)
-                    wether.weather.append(t)
-                     completion(wether)
+                    let f = Forecast()
+                    f.temperature = temp
+                    f.temperatureMin = temp_min
+                    f.temperatureMax = temp_max
+                    f.icon = icon
+                    f.formatDate = date.dateTimeString()
+                    f.dayOfWeek = date.dayName(ofStyle: .full)
+                    
+                    wether.weather.append(f)
+                    completion(wether)
                 }
             }else{
                 print("\(response.result.error!)")
-                  completion(wether)
+                completion(wether)
             }
         }
     }
