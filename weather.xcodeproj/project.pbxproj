@@ -26,6 +26,7 @@
 		B2166A65216FCC8100D6D784 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B2166A66216FCC8100D6D784 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B2166A67216FCC8100D6D784 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		B229DA0A2170D955005830D8 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		B2387884216F48E600B328A3 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2387887216F48E600B328A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B238788C216F48E600B328A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +68,16 @@
 			path = ../../../../../.Trash/Views/Controllers;
 			sourceTree = "<group>";
 		};
+		B229DA092170D93E005830D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B229DA0A2170D955005830D8 /* DayCell.swift */,
+				B238788B216F48E600B328A3 /* Main.storyboard */,
+				B2387890216F48E800B328A3 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B238787B216F48E600B328A3 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +99,11 @@
 		B2387886216F48E600B328A3 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				B229DA092170D93E005830D8 /* Views */,
 				B2166A64216FCC8100D6D784 /* Controllers */,
 				B238789C216F6D8200B328A3 /* Services */,
 				B238789A216F6D4A00B328A3 /* Models */,
 				B2387887216F48E600B328A3 /* AppDelegate.swift */,
-				B238788B216F48E600B328A3 /* Main.storyboard */,
-				B2387890216F48E800B328A3 /* LaunchScreen.storyboard */,
 				B2387893216F48E800B328A3 /* Info.plist */,
 				B2166A60216FBE5300D6D784 /* Assets.xcassets */,
 			);
