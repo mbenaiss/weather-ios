@@ -8,5 +8,6 @@ target 'weather' do
   # Pods for weather
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'SwifterSwift/Foundation', '4.6.0'
+  pod 'SwifterSwift/Foundation'
+  pod 'RealmSwift'
 end

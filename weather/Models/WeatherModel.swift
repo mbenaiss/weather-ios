@@ -7,23 +7,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Weather{
-    var city : String
-    var weather : Array<Forecast> = []
- 
-    init(city:String) {
-        self.city = city
+class Weather : Object{
+    @objc dynamic var city : String = ""
+    @objc dynamic var lastSync : Date = Date()
+    var forecasts = List<Forecast>()
+    
+    override static func primaryKey() -> String? {
+        return "city"
     }
 }
 
-class Forecast {
-    var temperature : Int = 0
-    var temperatureMin : Int = 0
-    var temperatureMax : Int = 0
-    var dateTime : Date = Date.init()
-    var formatDate : String = ""
-    var dayOfWeek:String = ""
-    var icon : String = ""
-    
+class Forecast :Object{
+    @objc dynamic var   temperature : Int = 0
+    @objc dynamic var  temperatureMin : Int = 0
+    @objc dynamic var  temperatureMax : Int = 0
+    @objc dynamic var  date : Date = Date()
+    @objc dynamic var   icon : String = ""
 }

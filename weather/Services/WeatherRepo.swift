@@ -11,17 +11,43 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import SwifterSwift
+import RealmSwift
 
 class WeatherRepo{
     
     private let API_KEY = "b6352b1697f5919b4f0ea88b280cf729"
     private let Base_URL = "https://api.openweathermap.org/data/2.5/forecast"
     
+    let realm = try! Realm()
+    
+    
+    func saveWeather(weather : Weather){
+        try! realm.write {
+            realm.add(weather,update: true )
+        }
+    }
+    
+    
     func  getWeather(forCity city : String,completion: @escaping (Weather) -> Void){
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        let weatherDb = getWeatherFromDb(forCity: city)
+        
+        if weatherDb != nil  && ( Calendar.current.dateComponents([.minute], from: Date(), to: weatherDb!.lastSync).minute! > 5 ) {
+            completion(weatherDb!)
+        }else{
+            self.getWeatherFromApi(forCity: city, completion: completion)
+        }
+    }
+    
+    func getWeatherFromDb(forCity city:String) -> Weather?{
+        return  Array(realm.objects(Weather.self).filter("city = '\(city)'")).first
+    }
+    
+    func  getWeatherFromApi(forCity city : String,completion: @escaping (Weather) -> Void){
         let params : [String:String] = [ "q": city, "appid":API_KEY]
         
-        let wether =  Weather(city: city)
-        
+        let wether =  Weather()
+        wether.city = city
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "fr_FR")
         
@@ -39,13 +65,12 @@ class WeatherRepo{
                     f.temperature = temp
                     f.temperatureMin = temp_min
                     f.temperatureMax = temp_max
+                    f.date = date
                     f.icon = icon
-                    f.formatDate = date.dateTimeString()
-                    f.dayOfWeek = date.dayName(ofStyle: .full)
-                    
-                    wether.weather.append(f)
-                    completion(wether)
+                    wether.forecasts.append(f)
                 }
+                self.saveWeather(weather: wether)
+                completion(wether)
             }else{
                 print("\(response.result.error!)")
                 completion(wether)
@@ -53,10 +78,20 @@ class WeatherRepo{
         }
     }
     
+    func groupByDay(from weather : Weather) -> Array<Forecast>{
+        var dictDays = Array<Forecast>()
+        let days =    Dictionary(grouping: weather.forecasts, by: { $0.date.day })
+            .sorted(by: { $0.key  < $1.key })
+        
+        days.forEach { (arg: (key: Int, value: [Forecast])) in
+            dictDays.append(arg.value[0])
+        }
+        
+        return dictDays
+    }
+    
     func convertToCelsius(_ value : Double) -> Int {
         return Int(value -  273.15)
     }
-    
-    
     
 }
