@@ -10,6 +10,6 @@ import Foundation
 
 protocol DatabaseInterface {
     
-   func get<T>(predicate: String) -> T?
+    func get<T>(predicate: String) -> T?
     func save<T>(data:T)
 }

@@ -18,13 +18,11 @@ class WeatherRepo{
     private let API_KEY = "b6352b1697f5919b4f0ea88b280cf729"
     private let Base_URL = "https://api.openweathermap.org/data/2.5/forecast"
     
-    
     let Db = RealmDB()
     
     func saveWeather(weather : Weather){
         Db.save(data: weather)
     }
-    
     
     func  getWeather(forCity city : String,completion: @escaping (Weather?) -> Void){
         let weatherDb = getWeatherFromDb(forCity: city)
