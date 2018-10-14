@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2166A61216FBE5300D6D784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2166A60216FBE5300D6D784 /* Assets.xcassets */; };
 		B2166A68216FCC8100D6D784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2166A65216FCC8100D6D784 /* ViewController.swift */; };
 		B2166A69216FCC8100D6D784 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2166A66216FCC8100D6D784 /* DetailViewController.swift */; };
 		B229DA0C2170F26C005830D8 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229DA0B2170F26C005830D8 /* PageViewController.swift */; };
@@ -17,13 +16,16 @@
 		B238789E216F6D9E00B328A3 /* WeatherRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238789D216F6D9E00B328A3 /* WeatherRepo.swift */; };
 		B23878A0216F6DFA00B328A3 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238789F216F6DFA00B328A3 /* WeatherModel.swift */; };
 		B26C6F9621736F02004E67B9 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6F9521736F02004E67B9 /* DayCell.swift */; };
+		B26C6F9A2173B9AA004E67B9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6F992173B9AA004E67B9 /* DatabaseInterface.swift */; };
+		B26C6F9C2173BA31004E67B9 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6F9B2173BA31004E67B9 /* RealmDB.swift */; };
+		B26C6FA22173BD95004E67B9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6FA12173BD95004E67B9 /* Alert.swift */; };
+		B26C6FA42173BF9C004E67B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26C6FA32173BF9C004E67B9 /* Assets.xcassets */; };
 		C13D1C3DAE45FBF691DEB0E2 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD944DDE4C74EB3DE60C860 /* Pods_weather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D36FC272BE2DD55DC6A5302 /* Pods-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-weather/Pods-weather.release.xcconfig"; sourceTree = "<group>"; };
 		9FD944DDE4C74EB3DE60C860 /* Pods_weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2166A60216FBE5300D6D784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2166A65216FCC8100D6D784 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B2166A66216FCC8100D6D784 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B229DA0B2170F26C005830D8 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,10 @@
 		B238789D216F6D9E00B328A3 /* WeatherRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepo.swift; sourceTree = "<group>"; };
 		B238789F216F6DFA00B328A3 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		B26C6F9521736F02004E67B9 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		B26C6F992173B9AA004E67B9 /* DatabaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
+		B26C6F9B2173BA31004E67B9 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
+		B26C6FA12173BD95004E67B9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B26C6FA32173BF9C004E67B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4CD72BCFD30E90D790894FC /* Pods-weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weather/Pods-weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,7 @@
 				B26C6F9521736F02004E67B9 /* DayCell.swift */,
 				B238788B216F48E600B328A3 /* Main.storyboard */,
 				B2387890216F48E800B328A3 /* LaunchScreen.storyboard */,
+				B26C6FA12173BD95004E67B9 /* Alert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,13 +107,14 @@
 		B2387886216F48E600B328A3 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				B26C6FA32173BF9C004E67B9 /* Assets.xcassets */,
+				B26C6F982173B975004E67B9 /* Database */,
 				B229DA092170D93E005830D8 /* Views */,
 				B2166A64216FCC8100D6D784 /* Controllers */,
 				B238789C216F6D8200B328A3 /* Services */,
 				B238789A216F6D4A00B328A3 /* Models */,
 				B2387887216F48E600B328A3 /* AppDelegate.swift */,
 				B2387893216F48E800B328A3 /* Info.plist */,
-				B2166A60216FBE5300D6D784 /* Assets.xcassets */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -125,6 +133,15 @@
 				B238789D216F6D9E00B328A3 /* WeatherRepo.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B26C6F982173B975004E67B9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B26C6F992173B9AA004E67B9 /* DatabaseInterface.swift */,
+				B26C6F9B2173BA31004E67B9 /* RealmDB.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		C9A9D1346E9BE3E410D4D065 /* Pods */ = {
@@ -197,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2387892216F48E800B328A3 /* LaunchScreen.storyboard in Resources */,
-				B2166A61216FBE5300D6D784 /* Assets.xcassets in Resources */,
+				B26C6FA42173BF9C004E67B9 /* Assets.xcassets in Resources */,
 				B238788D216F48E600B328A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,12 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26C6F9A2173B9AA004E67B9 /* DatabaseInterface.swift in Sources */,
 				B238789E216F6D9E00B328A3 /* WeatherRepo.swift in Sources */,
+				B26C6F9C2173BA31004E67B9 /* RealmDB.swift in Sources */,
 				B229DA0C2170F26C005830D8 /* PageViewController.swift in Sources */,
 				B26C6F9621736F02004E67B9 /* DayCell.swift in Sources */,
 				B23878A0216F6DFA00B328A3 /* WeatherModel.swift in Sources */,
 				B2166A69216FCC8100D6D784 /* DetailViewController.swift in Sources */,
 				B2166A68216FCC8100D6D784 /* ViewController.swift in Sources */,
+				B26C6FA22173BD95004E67B9 /* Alert.swift in Sources */,
 				B2387888216F48E600B328A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

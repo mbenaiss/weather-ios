@@ -18,18 +18,15 @@ class WeatherRepo{
     private let API_KEY = "b6352b1697f5919b4f0ea88b280cf729"
     private let Base_URL = "https://api.openweathermap.org/data/2.5/forecast"
     
-    let realm = try! Realm()
     
+    let Db = RealmDB()
     
     func saveWeather(weather : Weather){
-        try! realm.write {
-            realm.add(weather,update: true )
-        }
+        Db.save(data: weather)
     }
     
     
-    func  getWeather(forCity city : String,completion: @escaping (Weather) -> Void){
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    func  getWeather(forCity city : String,completion: @escaping (Weather?) -> Void){
         let weatherDb = getWeatherFromDb(forCity: city)
         
         if weatherDb != nil  && ( Calendar.current.dateComponents([.minute], from: Date(), to: weatherDb!.lastSync).minute! > 5 ) {
@@ -40,13 +37,13 @@ class WeatherRepo{
     }
     
     func getWeatherFromDb(forCity city:String) -> Weather?{
-        return  Array(realm.objects(Weather.self).filter("city = '\(city)'")).first
+        return  Db.get(predicate: "city = '\(city)'")
     }
     
-    func  getWeatherFromApi(forCity city : String,completion: @escaping (Weather) -> Void){
+    func  getWeatherFromApi(forCity city : String,completion: @escaping (Weather?) -> Void){
         let params : [String:String] = [ "q": city, "appid":API_KEY]
         
-        var wether =  Weather()
+        let wether =  Weather()
         wether.city = city
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "fr_FR")
@@ -72,8 +69,7 @@ class WeatherRepo{
                 self.saveWeather(weather: wether)
                 completion(wether)
             }else{
-                wether = self.getWeatherFromDb(forCity: city) ??  Weather()
-                completion(wether)
+                completion(self.getWeatherFromDb(forCity: city))
             }
         }
     }
