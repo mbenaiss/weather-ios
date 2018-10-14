@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class DayCell: UITableViewCell{
     
@@ -16,7 +17,10 @@ class DayCell: UITableViewCell{
     @IBOutlet weak var min: UILabel!
     
     func setWeaterDay(temp :Forecast) {
-        day.text = temp.dayOfWeek
+        day.text = "\(temp.date.dayName(ofStyle: .threeLetters)) : \(temp.date.hour) h" 
+        icon.image = UIImage(named: temp.icon)
+        icon.contentMode = .scaleAspectFit
+        icon.adjustsImageSizeForAccessibilityContentSizeCategory = true
         max.text = String(temp.temperatureMax)
         min.text = String(temp.temperatureMin)
     }

@@ -46,7 +46,7 @@ class WeatherRepo{
     func  getWeatherFromApi(forCity city : String,completion: @escaping (Weather) -> Void){
         let params : [String:String] = [ "q": city, "appid":API_KEY]
         
-        let wether =  Weather()
+        var wether =  Weather()
         wether.city = city
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "fr_FR")
@@ -66,13 +66,13 @@ class WeatherRepo{
                     f.temperatureMin = temp_min
                     f.temperatureMax = temp_max
                     f.date = date
-                    f.icon = icon
+                    f.icon = self.setIcon(forId: icon)
                     wether.forecasts.append(f)
                 }
                 self.saveWeather(weather: wether)
                 completion(wether)
             }else{
-                print("\(response.result.error!)")
+                wether = self.getWeatherFromDb(forCity: city) ??  Weather()
                 completion(wether)
             }
         }
@@ -94,4 +94,46 @@ class WeatherRepo{
         return Int(value -  273.15)
     }
     
+    func setIcon(forId:String) -> String{
+        switch forId {
+        case "01d":
+            return "snow.png"
+        case "01n":
+            return "snow.png"
+        case "02d":
+            return "partly_cloudy.png"
+        case "02n":
+            return "partly_cloudy.png"
+        case "03d":
+            return "cloudy.png"
+        case "03n":
+            return "cloudy.png"
+        case "04d":
+            return "cloudy.png"
+        case "04n":
+            return "cloudy.png"
+        case "09d":
+            return "light_rain.png"
+        case "09n":
+            return "light_rain.png"
+        case "10d":
+            return "light_rain.png"
+        case "10n":
+            return "light_rain.png"
+        case "11d":
+            return "thunder.png"
+        case "11n":
+            return "thunder.png"
+        case "13d":
+            return "snow.png"
+        case "13n":
+            return "snow.png"
+        case "50d":
+            return "foggy.png"
+        case "50n":
+            return "foggy.png"
+        default:
+            return "windy.png"
+        }
+    }
 }
