@@ -12,9 +12,9 @@ class DetailViewController: UIViewController,UITableViewDataSource  ,UITableView
     
     @IBOutlet weak var tableview: UITableView!
     
-    private var CurrentWeather = Weather(city: "paris")
+    private var CurrentWeather = Weather()
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,27 +22,32 @@ class DetailViewController: UIViewController,UITableViewDataSource  ,UITableView
         let repo = WeatherRepo()
         repo.getWeather(forCity: "paris") { (Weather) in
             
+            if let currentWeather  = Weather{
+                self.CurrentWeather = currentWeather
+                self.updateUI()
+            }else {
+                self.ShowAlert()
+            }
             
-            self.CurrentWeather = Weather
-            self.updateUI()
+            
         }
         tableview.delegate = self
         tableview.dataSource = self
     }
     
     func updateUI()  {
-       
+        
         tableview.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CurrentWeather.weather.count
+        return CurrentWeather.forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nextDays", for: indexPath) as! DayCell
         
-        cell.setWeaterDay(temp: CurrentWeather.weather[indexPath.row])
+        cell.setWeaterDay(temp: CurrentWeather.forecasts[indexPath.row])
         return cell
     }
     

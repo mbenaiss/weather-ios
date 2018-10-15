@@ -183,21 +183,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="cityLabel" destination="GL5-Yn-Yzs" id="TeN-Kz-weF"/>
-                        <outlet property="day1" destination="FBH-95-1Ow" id="Giq-5K-6L4"/>
-                        <outlet property="day2" destination="9h2-qE-nff" id="Phh-ho-rIm"/>
-                        <outlet property="day3" destination="4w6-PG-6Gy" id="3Ta-AK-caD"/>
-                        <outlet property="day4" destination="GfZ-Y2-ljr" id="Bfy-Ug-G0e"/>
-                        <outlet property="dayLabel" destination="3Un-n5-SaI" id="bim-v0-4sk"/>
-                        <outlet property="icon1" destination="xFN-xW-as8" id="kWP-T3-nnN"/>
-                        <outlet property="icon2" destination="3K8-6f-qLP" id="3aI-fc-azM"/>
-                        <outlet property="icon3" destination="Vd9-3y-2KR" id="BJm-QI-IbR"/>
-                        <outlet property="icon4" destination="L5S-gH-5HW" id="d4k-zg-dCh"/>
+                        <outlet property="cityLabel" destination="GL5-Yn-Yzs" id="Ob3-Yl-G54"/>
+                        <outlet property="day1" destination="FBH-95-1Ow" id="VGo-xm-hIu"/>
+                        <outlet property="day2" destination="9h2-qE-nff" id="W0R-Zs-Sbc"/>
+                        <outlet property="day3" destination="4w6-PG-6Gy" id="wFN-5j-nhz"/>
+                        <outlet property="day4" destination="GfZ-Y2-ljr" id="4hl-cw-3H8"/>
+                        <outlet property="dayLabel" destination="3Un-n5-SaI" id="m60-TR-9dO"/>
+                        <outlet property="icon1" destination="xFN-xW-as8" id="SUA-IW-0xZ"/>
+                        <outlet property="icon2" destination="3K8-6f-qLP" id="AFK-el-YZP"/>
+                        <outlet property="icon3" destination="Vd9-3y-2KR" id="kkw-A7-rRM"/>
+                        <outlet property="icon4" destination="L5S-gH-5HW" id="A8R-du-ONm"/>
                         <outlet property="tableview" destination="KYI-2z-lrX" id="thu-MN-ckT"/>
-                        <outlet property="temp1" destination="zUp-9K-2Uf" id="xgR-fD-DXt"/>
-                        <outlet property="temp2" destination="Jhw-cx-blm" id="ata-oz-5G4"/>
-                        <outlet property="temp3" destination="Jpd-Db-Oeu" id="oBO-vm-2Zl"/>
-                        <outlet property="temp4" destination="fTj-5u-Rah" id="Ahl-6y-e1W"/>
+                        <outlet property="temp1" destination="zUp-9K-2Uf" id="GYr-ia-8l6"/>
+                        <outlet property="temp2" destination="Jhw-cx-blm" id="1ta-ZI-KAK"/>
+                        <outlet property="temp3" destination="Jpd-Db-Oeu" id="hrI-iy-Gdm"/>
+                        <outlet property="temp4" destination="fTj-5u-Rah" id="t9d-sm-f13"/>
                         <outlet property="tempLabel" destination="6Sw-ym-NDh" id="qQO-xB-jHW"/>
                     </connections>
                 </viewController>
