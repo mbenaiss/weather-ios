@@ -19,7 +19,7 @@
 		B26C6F9C2173BA31004E67B9 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6F9B2173BA31004E67B9 /* RealmDB.swift */; };
 		B26C6FA22173BD95004E67B9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C6FA12173BD95004E67B9 /* Alert.swift */; };
 		B26C6FA42173BF9C004E67B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26C6FA32173BF9C004E67B9 /* Assets.xcassets */; };
-		B26C714321746956004E67B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C714221746956004E67B9 /* PageViewController.swift */; };
+		B26C714521746AB4004E67B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C714421746AB4004E67B9 /* PageViewController.swift */; };
 		C13D1C3DAE45FBF691DEB0E2 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD944DDE4C74EB3DE60C860 /* Pods_weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		B26C6F9B2173BA31004E67B9 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		B26C6FA12173BD95004E67B9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B26C6FA32173BF9C004E67B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B26C714221746956004E67B9 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../../../go/src/git.vpgrp.io/weather/weather/Controllers/PageViewController.swift; sourceTree = "<group>"; };
+		B26C714421746AB4004E67B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		C4CD72BCFD30E90D790894FC /* Pods-weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weather/Pods-weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,12 +67,11 @@
 		B2166A64216FCC8100D6D784 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B26C714221746956004E67B9 /* PageViewController.swift */,
 				B2166A65216FCC8100D6D784 /* ViewController.swift */,
 				B2166A66216FCC8100D6D784 /* DetailViewController.swift */,
+				B26C714421746AB4004E67B9 /* PageViewController.swift */,
 			);
-			name = Controllers;
-			path = ../../../../../.Trash/Views/Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B229DA092170D93E005830D8 /* Views */ = {
@@ -274,7 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26C6F9A2173B9AA004E67B9 /* DatabaseInterface.swift in Sources */,
-				B26C714321746956004E67B9 /* PageViewController.swift in Sources */,
+				B26C714521746AB4004E67B9 /* PageViewController.swift in Sources */,
 				B238789E216F6D9E00B328A3 /* WeatherRepo.swift in Sources */,
 				B26C6F9C2173BA31004E67B9 /* RealmDB.swift in Sources */,
 				B26C6F9621736F02004E67B9 /* DayCell.swift in Sources */,

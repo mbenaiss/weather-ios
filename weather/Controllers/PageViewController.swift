@@ -1,10 +1,11 @@
-//
-//  PageViewController.swift
-//  weather
-//
-//  Created by Mahmoud BEN AISSA on 12/10/2018.
-//  Copyright © 2018 Mahmoud BEN AISSA. All rights reserved.
-//
+
+////
+///  PageViewController.swift/
+///  weather/
+////
+///  Created by Mahmoud BEN AISSA on 12/10/2018./
+///  Copyright © 2018 Mahmoud BEN AISSA. All rights reserved./
+////
 
 import UIKit
 
@@ -28,7 +29,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDelegate,UIPa
         if  let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view./
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -37,7 +38,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDelegate,UIPa
     }
     
     func configurePageControl() {
-        // The total number of pages that are available is based on how many available colors we have.
+        /// The total number of pages that are available is based on how many available colors we have./
         pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 0
@@ -46,7 +47,7 @@ class PageViewController: UIPageViewController,UIPageViewControllerDelegate,UIPa
         self.pageControl.currentPageIndicatorTintColor = UIColor.black
         self.view.addSubview(pageControl)
     }
-     
+    
     func newVc(viewController:String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:viewController)
     }
@@ -88,14 +89,14 @@ class PageViewController: UIPageViewController,UIPageViewControllerDelegate,UIPa
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    ///
+    /// MARK: - Navigation/
     
+    /// In a storyboard-based application, you will often want to do a little preparation before navigation/
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {/
+    /// Get the new view controller using segue.destination./
+    /// Pass the selected object to the new view controller./
+    ///}
+    ///
 }
+
